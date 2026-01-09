@@ -1,0 +1,15 @@
+{
+  "name": "FeberCare",
+  "short_name": "FeberCare",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff6b6b",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2966/2966487.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
