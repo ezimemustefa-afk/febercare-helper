@@ -1,35 +1,31 @@
-function calculate() {
-  const weight = parseFloat(document.getElementById("weight").value);
-  const medicine = document.getElementById("medicine").value;
-  const time = document.getElementById("lastTime").value;
+let children = [];
 
-  if (!weight || !time) {
-    alert("Please fill all fields");
+function addChild() {
+  document.getElementById('child-form').style.display = 'block';
+}
+
+function calculateDose() {
+  const name = document.getElementById('child-name').value;
+  const weight = parseFloat(document.getElementById('child-weight').value);
+  if (!name || isNaN(weight) || weight <= 0) {
+    alert('Please enter valid name and weight.');
     return;
   }
 
-  let doseMg = 0;
-  let interval = "";
+  // Example: dose = 10mg per kg
+  const doseMg = weight * 10;
+  const doseMl = doseMg / 5; // Example: syrup 5mg/ml
 
-  if (medicine === "paracetamol") {
-    doseMg = weight * 15;
-    interval = "every 4–6 hours";
-  } else {
-    doseMg = weight * 10;
-    interval = "every 6–8 hours";
-  }
-
-  const spoons = (doseMg / 120).toFixed(1);
-
-  document.getElementById("result").innerHTML = `
-    <h3>Result</h3>
-    <p>Dose: <strong>${doseMg} mg</strong></p>
-    <p>≈ ${spoons} teaspoons (5ml)</p>
-    <p>Interval: ${interval}</p>
-    <p>Last dose time: ${time}</p>
-  `;
+  children.push({name, weight, doseMg, doseMl});
+  updateChildrenList();
+  document.getElementById('dose-result').innerHTML =
+    `${name}'s dose: ${doseMg} mg (${doseMl.toFixed(1)} ml)`;
 }
 
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js");
+function updateChildrenList() {
+  const list = document.getElementById('children-list');
+  list.innerHTML = '';
+  children.forEach((child, index) => {
+    list.innerHTML += `<div>${child.name}, ${child.weight}kg → ${child.doseMg} mg (${child.doseMl.toFixed(1)} ml)</div>`;
+  });
 }
