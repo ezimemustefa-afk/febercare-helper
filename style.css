@@ -1,56 +1,7 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f4f6f8;
-  color: #333;
-}
-
-header {
-  background: #ff6b6b;
-  color: white;
-  padding: 16px;
-  text-align: center;
-}
-
-main {
-  padding: 16px;
-}
-
-section {
-  background: white;
-  padding: 16px;
-  margin-bottom: 16px;
-  border-radius: 8px;
-}
-
-label {
-  display: block;
-  margin-top: 10px;
-}
-
-input, select, button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-}
-
-button {
-  background: #4caf50;
-  color: white;
-  border: none;
-  margin-top: 15px;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.warning {
-  background: #fff3cd;
-  border-left: 5px solid #ff9800;
-  font-size: 14px;
-}
-
-footer {
-  text-align: center;
-  padding: 10px;
-  font-size: 13px;
-}
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fff; color:#333;}
+header { background:#ff6b6b; color:white; padding:20px; text-align:center; }
+section { padding:20px; border-bottom:1px solid #ddd; }
+button { padding:10px 15px; margin-top:10px; background:#ff6b6b; color:white; border:none; cursor:pointer; }
+button:hover { background:#e55b5b; }
+input { padding:5px; margin:5px 0; width:100px; }
+#dose-result { margin-top:10px; font-weight:bold; }
