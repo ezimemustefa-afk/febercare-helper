@@ -1,44 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <title>FeberCare</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
-  <meta name="theme-color" content="#ff6b6b">
+<meta charset="UTF-8">
+<title>FeberCare</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#ff6b6b">
 </head>
 <body>
-  <header>
-    <h1>FeberCare</h1>
-    <p>Child fever dose helper. Always consult a doctor.</p>
-  </header>
+<header>
+<h1>FeberCare</h1>
+<p>Child fever dose helper. Always consult a doctor.</p>
+</header>
 
-  <section id="children-section">
-    <h2>Children</h2>
-    <div id="children-list"></div>
-    <button onclick="addChild()">Add Child</button>
-  </section>
+<section id="children-section">
+<h2>Children</h2>
+<div id="children-list"></div>
+<button onclick="addChild()">Add Child</button>
+</section>
 
-  <section id="calculator-section">
-    <h2>Calculate Dose</h2>
-    <div id="child-form" style="display:none;">
-      <label>Child Name: <input type="text" id="child-name"></label><br>
-      <label>Weight (kg): <input type="number" id="child-weight"></label><br>
-      <button onclick="calculateDose()">Calculate Dose</button>
-    </div>
-    <div id="dose-result"></div>
-  </section>
+<section id="calculator-section">
+<h2>Calculate Dose</h2>
+<div id="child-form" style="display:none;">
+<label>Child Name: <input type="text" id="child-name"></label><br>
+<label>Weight (kg): <input type="number" id="child-weight"></label><br>
+<label>Medicine:
+<select id="child-medicine">
+<option value="paracetamol">Paracetamol (Alvedon®)</option>
+<option value="ibuprofen">Ibuprofen (Ipren®)</option>
+</select>
+</label><br>
+<button onclick="calculateDose()">Calculate Dose</button>
+</div>
+<div id="dose-result"></div>
+</section>
 
-  <footer>
-    <p>⚠️ This app does not replace medical consultation. Always consult a doctor.</p>
-  </footer>
+<section id="timeline-section">
+<h2>Schedule / Tidslinje</h2>
+<p>Du kan ge Paracetamol och Ibuprofen samtidigt, men ofta är det klokt att varva Paracetamol och Ibuprofen. Börja med att ge Paracetamol (rosa) och ge sen Ibuprofen (blå) efter 4 timmar. Varva sen Paracetamol och Ibuprofen var fjärde timme hela dygnet.</p>
+<p>Du kan ge Paracetamol max 4 gånger per dag, och Ibuprofen max 3 gånger per dag.</p>
+<p>För mer information: <a href="https://feberbarn.se/" target="_blank">Feberbarn.se</a></p>
+<div id="timeline"></div>
+</section>
 
-  <script src="app.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
-    }
-  </script>
+<footer>
+<p>⚠️ This app does not replace medical consultation. Always consult a doctor.</p>
+</footer>
+
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+navigator.serviceWorker.register('sw.js');
+}
+</script>
 </body>
 </html>
