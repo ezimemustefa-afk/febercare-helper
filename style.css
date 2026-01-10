@@ -3,5 +3,8 @@ header { background:#ff6b6b; color:white; padding:20px; text-align:center; }
 section { padding:20px; border-bottom:1px solid #ddd; }
 button { padding:10px 15px; margin-top:10px; background:#ff6b6b; color:white; border:none; cursor:pointer; }
 button:hover { background:#e55b5b; }
-input { padding:5px; margin:5px 0; width:100px; }
+input, select { padding:5px; margin:5px 0; width:150px; }
 #dose-result { margin-top:10px; font-weight:bold; }
+#timeline div { margin-top:5px; }
+.paracetamol { color:pink; }
+.ibuprofen { color:blue; }
