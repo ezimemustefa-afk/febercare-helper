@@ -3,28 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>FeberCare</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ff6b6b">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icons/febercare-icon-192.png">
-
+  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#ff6b6b">
 </head>
 <body>
+  <header>
+    <h1>FeberCare</h1>
+    <p>Child fever dose helper. Always consult a doctor.</p>
+  </header>
 
-<h1>FeberCare</h1>
-<p>Child fever dose helper. Always consult a doctor.</p>
+  <section id="children-section">
+    <h2>Children</h2>
+    <div id="children-list"></div>
+    <button onclick="addChild()">Add Child</button>
+  </section>
 
-<button onclick="alert('This app does NOT replace a doctor consultation')">
-  Disclaimer
-</button>
+  <section id="calculator-section">
+    <h2>Calculate Dose</h2>
+    <div id="child-form" style="display:none;">
+      <label>Child Name: <input type="text" id="child-name"></label><br>
+      <label>Weight (kg): <input type="number" id="child-weight"></label><br>
+      <button onclick="calculateDose()">Calculate Dose</button>
+    </div>
+    <div id="dose-result"></div>
+  </section>
 
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
-</script>
+  <footer>
+    <p>⚠️ This app does not replace medical consultation. Always consult a doctor.</p>
+  </footer>
 
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
 </body>
 </html>
